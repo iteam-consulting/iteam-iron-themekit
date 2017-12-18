@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'typography';
+@import 'layout';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $font-size;
+  margin: 0;
+}

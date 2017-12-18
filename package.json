@@ -1,0 +1,42 @@
+{
+  "name": "iteam-iron-themekit",
+  "version": "0.0.0",
+  "description": "Themekit for iTEAM Consulting Iron projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --env.IRON_DEBUG=true --devtool source-map",
+    "build": "webpack --env.IRON_DEBUG=false --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iteam-consulting/iteam-iron-themekit.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "theme",
+    "style",
+    "frontend",
+    "web"
+  ],
+  "author": "software@iteamnm.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iteam-consulting/iteam-iron-themekit/issues"
+  },
+  "homepage": "https://github.com/iteam-consulting/iteam-iron-themekit#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.3.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
