@@ -1,10 +1,14 @@
 @import 'variables';
+@import 'mixins/animation';
 
 .layout {
   display: flex;
   flex-flow: row wrap;
   overflow-x: hidden;
-  padding-top: $header-height;
+
+  & > * {
+    border: 2px solid pink;
+  }
 
   @media (min-width: $screen-md-min) {
     padding-top: 0;
@@ -13,71 +17,100 @@
   &.fixed-header {
     padding-top: $header-height;
 
-    header {
+    > header {
       position: fixed;
       top: 0;
     }
   }
+}
 
-  &.show-menu {
-    nav {
-      transform: translateX(0);
-    }
-  }
-
-  header {
-    align-items: center;
-    border: solid 3px pink;
-    display: flex;
+header {
+  align-items: center;
+  display: flex;
+  
+  .layout > & {
     height: $header-height;
     width: 100%;
-    position: fixed;
-    top: 0;
-  
-    button#menutoggle {
-      display: initial;
-      margin: 16px;
-    }
-  
-    @media (min-width: $screen-md-min) {
-      position: static;
-      top: initial;
-
-      button#menutoggle {
-        display: none;
-      }
-    }
   }
 
-  nav {
-    border: solid 3px fuchsia;
-    transition: all ease-in-out .12s;
-    transform: translateX(-$nav-width);
-    width: $nav-width;
-    position: fixed;
-    top: $header-height;
+  button#menutoggle {
+    display: initial;
+    margin: 16px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    button#menutoggle {
+      display: none;
+    }
+
+    .layout.split-header > & {
+      width: initial;
+    }
+  }
+}
+
+nav {
+  .layout > & {
+    @include standard-transition(transform);
     max-height: calc(100vh - #{$header-height});
     overflow-y: auto;
+    position: fixed;
+    top: $header-height;
+    transform: translateX(-$nav-width);
+    width: $nav-width;
 
     @media (min-width: $screen-md-min) {
-      transform: translateX(0);
+      display: flex;
       position: static;
-      max-height: none;
+      transform: translateX(0);
+      width: 100%;
     }
   }
-  
-  footer {
-    border: solid 3px hotpink;
-    width: 100%;
+
+  .layout.split-header > & {
+    @media (min-width: $screen-md-min) {
+      align-items: center;
+      flex: 1;
+      width: initial;
+    }
+  }
+
+  .layout.sidebar > & {
+    @media (min-width: $screen-md-min) {
+      width: $nav-width;
+    }
+  }
+
+  .layout.show-menu > & {
+    transform: translateX(0);
   }
 }
 
 main {
-  border: solid 3px violet;
+  @include standard-transition(transform);
   flex: 1;
-  transition: all ease-in-out .12s;
-  
+
   .layout.show-menu & {
+    transform: translateX($nav-width);
+  }
+
+  .layout.split-header & {
+    @media (min-width: $screen-md-min) {
+      width: 100%;
+      flex: initial;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    position: static;
+  }
+}
+
+footer {
+  @include standard-transition(transform);
+  width: 100%;
+
+  .show-menu > & {
     transform: translateX($nav-width);
   }
 

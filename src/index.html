@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-  </head>
-  <body class="layout">
-    <header>
-      <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu">
-        menu
-      </button>
-      iTEAM Iron Themekit
-    </header>
-    <nav aria-labelledby="menutoggle" role="menu">
-      Navigation
-    </nav>
-    <main>
-      Hello, World!
-    </main>
-    <footer>
-      &copy; 2017, iTEAM Consulting
-    </footer>
-  </body>
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+</head>
+
+<body class="layout">
+  <header>
+    <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu">
+      menu
+    </button>
+    iTEAM Iron Themekit
+  </header>
+  <nav aria-labelledby="menutoggle" role="menu">
+    Navigation
+  </nav>
+  <main>
+    Hello, World!
+    <br>
+    <label for="default">
+      <input type="radio" name="layout" id="default" value="default" checked> Default
+    </label>
+    <br>
+    <label for="split">
+      <input type="radio" name="layout" id="split" value="split"> Split
+    </label>
+    <br>
+    <label for="sidebar">
+      <input type="radio" name="layout" id="sidebar" value="sidebar"> Sidebar
+    </label>
+  </main>
+  <footer>
+    &copy; 2017, iTEAM Consulting
+  </footer>
+  <script>
+    function layoutChangeFactory(layout) {
+      return function () {
+        switch (layout) {
+          case 'default':
+            document.body.className = 'layout';
+            break;
+          case 'split':
+            document.body.className = 'layout split-header';
+            break;
+          case 'sidebar':
+            document.body.classList = 'layout sidebar';
+            break;
+        }
+      };
+    }
+
+    document.getElementById('default').onclick = layoutChangeFactory('default');
+    document.getElementById('split').onclick = layoutChangeFactory('split');
+    document.getElementById('sidebar').onclick = layoutChangeFactory('sidebar');
+  </script>
+</body>
+
 </html>
