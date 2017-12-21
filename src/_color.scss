@@ -8,6 +8,18 @@ body {
   color: $bg-dark;
 }
 
+header {
+  .layout > & {
+    background-color: $brand-color;
+  }
+}
+
+nav {
+  .layout > & {
+    background-color: rgba($brand-color, .12);
+  }
+}
+
 h1,
 h2,
 h3,

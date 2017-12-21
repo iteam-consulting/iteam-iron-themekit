@@ -23,6 +23,10 @@
 header {
   align-items: center;
   display: flex;
+
+  .layout > &.hero {
+    height: calc(100vh - #{$nav-height});
+  }
   
   .layout > & {
     height: $header-height;
@@ -54,6 +58,7 @@ nav {
     top: $header-height;
     transform: translateX(-$nav-width);
     width: $nav-width;
+    height: $nav-height;
 
     @media (min-width: $screen-md-min) {
       display: flex;
@@ -116,12 +121,20 @@ footer {
 }
 
 .container {
-  width: 100%;
+  margin: 0 auto;
   padding: 16px;
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    width: $screen-sm-min;
+  }
 
   @media (min-width: $screen-md-min) {
-    width: 960px;
-    margin: 0 auto;
+    width: $screen-md-min;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: $screen-lg-min;
   }
 }
 
