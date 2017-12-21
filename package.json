@@ -4,7 +4,7 @@
   "description": "Themekit for iTEAM Consulting Iron projects",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --env.IRON_DEBUG=true --devtool source-map",
+    "start": "webpack-dev-server --env.IRON_DEBUG=true --devtool source-map --port 3000",
     "build": "webpack --env.IRON_DEBUG=false --progress"
   },
   "repository": {

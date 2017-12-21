@@ -6,35 +6,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon-32x32.png?v=2" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png?v=2" sizes="16x16" />
 </head>
 
 <body class="layout">
   <header>
-    <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu">
-      menu
-    </button>
-    iTEAM Iron Themekit
+    <div class="container flex">
+      <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu" class="material-icons">
+        menu
+      </button>
+      <img src="favicon-32x32.png?v=2" style="margin: 8px;" /> iTEAM Iron Themekit
+    </div>
   </header>
   <nav aria-labelledby="menutoggle" role="menu">
-    Navigation
+    <div class="container">
+      Navigation
+    </div>
   </nav>
   <main>
-    Hello, World!
-    <br>
-    <label for="default">
-      <input type="radio" name="layout" id="default" value="default" checked> Default
-    </label>
-    <br>
-    <label for="split">
-      <input type="radio" name="layout" id="split" value="split"> Split
-    </label>
-    <br>
-    <label for="sidebar">
-      <input type="radio" name="layout" id="sidebar" value="sidebar"> Sidebar
-    </label>
+    <section class="container">
+      <header>
+        <h1>Iron Theme</h1>
+      </header>
+      <p>Select a layout type:</p>
+      <label for="default">
+        <input type="radio" name="layout" id="default" value="default" checked> Default
+      </label>
+      <br>
+      <label for="split">
+        <input type="radio" name="layout" id="split" value="split"> Split
+      </label>
+      <br>
+      <label for="sidebar">
+        <input type="radio" name="layout" id="sidebar" value="sidebar"> Sidebar
+      </label>
+    </section>
   </main>
   <footer>
-    &copy; 2017, iTEAM Consulting
+    <div class="container">
+      &copy; 2017, iTEAM Consulting
+    </div>
   </footer>
   <script>
     function layoutChangeFactory(layout) {
