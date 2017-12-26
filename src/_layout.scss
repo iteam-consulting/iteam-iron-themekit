@@ -64,10 +64,11 @@ nav {
     align-items: center;
     display: flex;
     height: $header-height;
-    padding: 0 8px;
+    padding: 0 16px;
     text-decoration: none;
     color: inherit;
     outline: 0;
+    width: 100%;
 
     &:hover {
       background-color: rgba(#000, 0.12);
@@ -76,22 +77,41 @@ nav {
         background-color: rgba(#fff, 0.12);
       }
     }
+
+    @media (min-width: $screen-md-min) {
+      width: initial;
+      padding: 0 8px;
+    }
   }
 
   .layout > & {
     @include standard-transition(transform);
+    height: calc(100vh - #{$header-height});
+    max-height: calc(100vh - #{$header-height});
     overflow-y: auto;
     position: fixed;
-    max-height: calc(100vh - #{$header-height * 2});
     top: $header-height;
     transform: translateX(-$nav-width);
     width: $nav-width;
-    
+
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+
     @media (min-width: $screen-md-min) {
       display: flex;
+      height: initial;
       position: static;
       transform: translateX(0);
       width: 100%;
+
+      .container {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 16px;
+      }
     }
     
     .layout:not(.sidebar) {
@@ -128,17 +148,17 @@ nav {
   .layout.sidebar > & {
     @media (min-width: $screen-md-min) {
       width: $nav-width;
-    }
 
-    .container {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-    }
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+      }
 
-    .nav-item {
-      width: 100%;
-      padding: 0 16px;
+      .nav-item {
+        width: 100%;
+        padding: 0 16px;
+      }
     }
   }
 
