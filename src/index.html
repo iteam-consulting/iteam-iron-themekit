@@ -13,10 +13,23 @@
 
 <body class="layout">
   <header>
-    <div class="container flex">
-      <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu" class="material-icons">
+    <div class="container row">
+      <button
+          id="menutoggle"
+          aria-haspopup="true"
+          aria-controls="navmenu"
+          class="material-icons"
+      >
         menu
-      </button> iTEAM Iron Themekit
+      </button>
+      <span>iTEAM Iron Themekit</span>
+      <button
+          id="nighttoggle"
+          class="material-icons dense"
+          style="margin-left: 8px;"
+      >
+        brightness_7
+      </button>
     </div>
   </header>
   <nav aria-labelledby="menutoggle" role="menu">
@@ -25,10 +38,11 @@
     </div>
   </nav>
   <main>
+    <header class="container">
+      <h1>Iron Theme</h1>
+    </header>
     <section class="container">
-      <header>
-        <h1>Iron Theme</h1>
-      </header>
+      <h2>Layout</h2>
       <p>Select a layout type:</p>
       <label for="default">
         <input type="radio" name="layout" id="default" value="default" checked> Default
@@ -42,6 +56,25 @@
         <input type="radio" name="layout" id="sidebar" value="sidebar"> Sidebar
       </label>
     </section>
+    <section class="container">
+      <h2>Buttons</h2>
+      <div>Buttons can either be a button or an anchor with class "button".</div>
+      <div style="margin: 8px;"><a href="#" class="button">Anchor</a> <button>Button</button></div>
+      <div>Primary buttons can be styled by using the "primary" class.</div>
+      <div style="margin: 8px;"><a href="#" class="button primary">Anchor</a> <button class="primary">Button</button></div>
+      <div>Icon buttons are styled automatically when used with the "material-icons" class.</div>
+      <div style="margin: 8px;">
+        <a href="#" class="button material-icons">phone</a>
+        <button class="material-icons">playlist_add</button>
+        <a href="#" class="button material-icons primary">add</a>
+      </div>
+      <div>A dense icon button (using the "dense" class), will make the icon inherit its font size, and use less padding.</div>
+      <div style="margin: 8px;">
+        <a href="#" class="button material-icons dense">phone</a>
+        <button class="material-icons dense">playlist_add</button>
+        <a href="#" class="button material-icons primary dense">add</a>
+      </div>
+    </section>
   </main>
   <footer>
     <div class="container">
@@ -51,15 +84,15 @@
   <script>
     function layoutChangeFactory(layout) {
       return function () {
+        document.body.classList.remove('split-header', 'sidebar');
         switch (layout) {
-          case 'default':
-            document.body.className = 'layout';
-            break;
           case 'split':
-            document.body.className = 'layout split-header';
+            document.body.classList.add('split-header');
             break;
           case 'sidebar':
-            document.body.classList = 'layout sidebar';
+            document.body.classList.add('sidebar');
+            break;
+          default:
             break;
         }
       };

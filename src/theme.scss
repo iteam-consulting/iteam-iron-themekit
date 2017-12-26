@@ -1,8 +1,17 @@
+// Variable Definitions
 @import 'variables';
+
+// Mixins and functions
+@import 'mixins/animation';
+@import 'functions/contrast';
+
+// Rules
 @import 'typography';
 @import 'layout';
 @import 'color';
+@import 'buttons';
 
+// Global Styles
 *,
 *:before,
 *:after {
@@ -10,6 +19,7 @@
 }
 
 body {
+  @include standard-transition(all);
   font-size: $font-size;
   margin: 0;
 }

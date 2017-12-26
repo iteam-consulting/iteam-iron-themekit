@@ -1,0 +1,71 @@
+
+button,
+.button {
+  $padding: 8px;
+  @include standard-transition(background);
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid $bg-dark;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 64px;
+  padding: ($padding / 2) $padding;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: rgba(#000, .2);
+  }
+  
+  &:focus {
+    outline: none;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+  
+  &:not(.material-icons) {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: $font-family-primary;
+  }
+
+  // Primary Buttons
+  &.primary {
+    background-color: rgba($brand-color, .65);
+    color: contrast-text-color($brand-color);
+    border-color: rgba($brand-color, .65);
+
+    &:hover {
+      background-color: $brand-color;
+    }
+
+    &:visited {
+      color: contrast-text-color($brand-color);
+    }
+  }
+
+  // Icon Buttons
+  &.material-icons {
+    padding: $padding;
+    border-radius: 50%;
+    min-width: 0;
+    border: none;
+
+    // Dense
+    &.dense {
+      padding: $padding / 2;
+      font-size: 1em;
+    }
+  }
+
+  // Night Buttons
+  .night &:not(.primary) {
+    border-color: $bg-light;
+
+    &:hover {
+      background-color: rgba(#fff, .2);
+    }
+  }
+}

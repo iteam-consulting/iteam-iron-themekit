@@ -1,0 +1,8 @@
+// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+@function contrast-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $bg-dark; // Lighter background, return dark color
+  } @else {
+    @return $bg-light; // Darker background, return light color
+  }
+}
