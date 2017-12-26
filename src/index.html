@@ -26,36 +26,23 @@
       <button
           id="nighttoggle"
           class="material-icons dense"
-          style="margin-left: 8px;"
+          style="margin: 8px;"
       >
         brightness_7
       </button>
     </div>
   </header>
   <nav aria-labelledby="menutoggle" role="menu">
-    <div class="container">
-      Navigation
+    <div class="container row">
+      <a class="nav-item layoutChanger" href="#">Default Layout</a>
+      <a class="nav-item layoutChanger" href="#">Split Header</a>
+      <a class="nav-item layoutChanger" href="#">Sidebar</a>
     </div>
   </nav>
   <main>
     <header class="container">
       <h1>Iron Theme</h1>
     </header>
-    <section class="container">
-      <h2>Layout</h2>
-      <p>Select a layout type:</p>
-      <label for="default">
-        <input type="radio" name="layout" id="default" value="default" checked> Default
-      </label>
-      <br>
-      <label for="split">
-        <input type="radio" name="layout" id="split" value="split"> Split
-      </label>
-      <br>
-      <label for="sidebar">
-        <input type="radio" name="layout" id="sidebar" value="sidebar"> Sidebar
-      </label>
-    </section>
     <section class="container">
       <h2>Buttons</h2>
       <div>Buttons can either be a button or an anchor with class "button".</div>
@@ -81,27 +68,6 @@
       &copy; 2017, iTEAM Consulting
     </div>
   </footer>
-  <script>
-    function layoutChangeFactory(layout) {
-      return function () {
-        document.body.classList.remove('split-header', 'sidebar');
-        switch (layout) {
-          case 'split':
-            document.body.classList.add('split-header');
-            break;
-          case 'sidebar':
-            document.body.classList.add('sidebar');
-            break;
-          default:
-            break;
-        }
-      };
-    }
-
-    document.getElementById('default').onclick = layoutChangeFactory('default');
-    document.getElementById('split').onclick = layoutChangeFactory('split');
-    document.getElementById('sidebar').onclick = layoutChangeFactory('sidebar');
-  </script>
 </body>
 
 </html>

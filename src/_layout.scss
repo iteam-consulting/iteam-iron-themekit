@@ -1,6 +1,7 @@
 .layout {
   display: flex;
   flex-flow: row wrap;
+  align-items: stretch;
   overflow-x: hidden;
 
   @media (min-width: $screen-md-min) {
@@ -28,6 +29,10 @@ header {
     &.hero {
       height: calc(100vh - #{$nav-height});
     }
+
+    .container {
+      padding: 0 16px;
+    }
   }
 
   button#menutoggle {
@@ -42,6 +47,10 @@ header {
 
     .layout.split-header > & {
       width: initial;
+
+      .container {
+        width: initial;
+      }
     }
   }
 }
@@ -49,21 +58,49 @@ header {
 nav {
   @include standard-transition(all);
 
+  .nav-item,
+  .nav-item:visited {
+    @include standard-transition(all);
+    align-items: center;
+    display: flex;
+    height: $header-height;
+    padding: 0 8px;
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+
+    &:hover {
+      background-color: rgba(#000, 0.12);
+
+      .night & {
+        background-color: rgba(#fff, 0.12);
+      }
+    }
+  }
+
   .layout > & {
     @include standard-transition(transform);
-    height: $nav-height;
-    max-height: calc(100vh - #{$header-height});
     overflow-y: auto;
     position: fixed;
+    max-height: calc(100vh - #{$header-height * 2});
     top: $header-height;
     transform: translateX(-$nav-width);
     width: $nav-width;
-
+    
     @media (min-width: $screen-md-min) {
       display: flex;
       position: static;
       transform: translateX(0);
       width: 100%;
+    }
+    
+    .layout:not(.sidebar) {
+      height: $nav-height;
+    }
+
+    .container {
+      align-items: center;
+      padding: 0 16px;
     }
   }
 
@@ -71,12 +108,37 @@ nav {
     @media (min-width: $screen-md-min) {
       flex: 1;
       width: initial;
+
+      .container {
+        justify-content: flex-end;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .layout.split-header.left-nav > & {
+    @media (min-width: $screen-md-min) {
+      .container {
+        justify-content: flex-start;
+      }
     }
   }
 
   .layout.sidebar > & {
     @media (min-width: $screen-md-min) {
       width: $nav-width;
+    }
+
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+
+    .nav-item {
+      width: 100%;
+      padding: 0 16px;
     }
   }
 
