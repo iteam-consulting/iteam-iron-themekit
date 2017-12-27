@@ -5,17 +5,18 @@
 @import 'mixins/animation';
 @import 'functions/contrast';
 
-// Components
-@import 'components/header';
-@import 'components/nav';
-@import 'components/main';
-@import 'components/footer';
-@import 'components/buttons';
-
 // Rules
 @import 'typography';
 @import 'color';
 @import 'layout';
+
+// Components
+@import 'components/header';
+@import 'components/nav';
+@import 'components/nav-item';
+@import 'components/main';
+@import 'components/footer';
+@import 'components/buttons';
 
 // Global Styles
 *,
@@ -28,4 +29,23 @@ body {
   @include standard-transition(background);
   font-size: $font-size;
   margin: 0;
+}
+
+// Continuous sections
+section + section {
+  $top-margin: 128px;
+  position: relative;
+  margin-top: $top-margin;
+
+  &:before {
+    $height: 2px;
+    background-color: $brand-color;
+    border-radius: $height / 2;
+    content: '';
+    height: $height;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -(($top-margin / 2) + $height);
+  }
 }

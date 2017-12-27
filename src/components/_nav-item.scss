@@ -1,0 +1,35 @@
+.nav-item,
+.nav-item:visited {
+  @include standard-transition(all);
+  align-items: center;
+  color: inherit;
+  display: flex;
+  height: $header-height;
+  outline: 0;
+  padding: 0 16px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(#000, 0.12);
+
+    .night & {
+      background-color: rgba(#fff, 0.12);
+    }
+  }
+
+  .layout > nav & {
+    width: 100%;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 0 16px;
+
+    .layout > nav & {
+      width: auto;
+    }
+
+    .layout.sidebar > nav & {
+      width: 100%;
+    }
+  }
+}

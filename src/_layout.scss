@@ -27,16 +27,11 @@
   width: 100%;
 
   .layout:not(.sidebar) & {
-    margin: 0 auto;
-
-    @media (min-width: $screen-sm-min) {
-      width: $screen-sm-min;
-    }
-  
     @media (min-width: $screen-md-min) {
+      margin: 0 auto;
       width: $screen-md-min;
     }
-  
+
     @media (min-width: $screen-lg-min) {
       width: $screen-lg-min;
     }
@@ -50,9 +45,9 @@
 }
 
 .column {
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .flex {

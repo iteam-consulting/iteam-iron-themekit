@@ -22,37 +22,6 @@ nav {
   }
 }
 
-.nav-item,
-.nav-item:visited {
-  @include standard-transition(all);
-  align-items: center;
-  color: inherit;
-  display: flex;
-  height: $header-height;
-  outline: 0;
-  padding: 0 16px;
-  text-decoration: none;
-  width: 100%;
-
-  &:hover {
-    background-color: rgba(#000, 0.12);
-
-    .night & {
-      background-color: rgba(#fff, 0.12);
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    padding: 0 16px;
-    width: initial;
-
-    .layout.sidebar & {
-      width: 100%;
-    }
-  }
-}
-
-// Desktop
 @media (min-width: $screen-md-min) {
   .layout {
     // DEFAULT LAYOUT

@@ -12,15 +12,6 @@ header {
     &.hero {
       height: calc(100vh - #{$nav-height});
     }
-
-    .container {
-      padding: 0 16px;
-    }
-  }
-
-  #menutoggle {
-    display: initial;
-    margin: 16px;
   }
 
   @media (min-width: $screen-md-min) {
@@ -32,8 +23,8 @@ header {
       width: 25%;
       
       .container {
-        width: initial;
         margin: 0;
+        width: initial;
       }
     }
 
@@ -42,9 +33,7 @@ header {
     }
   }
 
-  main & {
-    h1 {
-      margin-bottom: 0;
-    }
+  main & h1 {
+    margin-bottom: 0;
   }
 }

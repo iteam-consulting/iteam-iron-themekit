@@ -35,6 +35,16 @@ nav {
   }
 }
 
+footer {
+  .layout.sidebar > & {
+    color: contrast-text-color(mix($brand-color, $bg-light, 80%));
+  }
+
+  .layout.sidebar.night > & {
+    color: contrast-text-color(mix($brand-color, $bg-dark, 80%));
+  }
+}
+
 h1,
 h2,
 h3,

@@ -10,16 +10,22 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png?v=2" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png?v=2" sizes="16x16" />
   <style>
+    @media (max-width: 768px) {
+      #fixedHeaderToggleContainer {
+        display: none;
+      }
+
+      #splitHeaderToggleContainer {
+        display: none;
+      }
+    }
+
     .layout.sidebar #fixedHeaderToggleContainer {
       display: none;
     }
 
-    #splitHeaderToggleContainer {
+    .layout:not(.split-header) #splitHeaderToggleContainer {
       display: none;
-    }
-
-    .layout.split-header #splitHeaderToggleContainer {
-      display: initial;
     }
   </style>
 </head>
@@ -35,12 +41,8 @@
       >
         menu
       </button>
-      <span>iTEAM Iron Themekit</span>
-      <button
-          id="nighttoggle"
-          class="material-icons dense"
-          style="margin-left: 8px;"
-      >
+      <a class="nav-item" href="/">iTEAM Iron Themekit</a>
+      <button id="nighttoggle" class="material-icons dense">
         brightness_7
       </button>
     </div>
@@ -52,36 +54,48 @@
       <a class="nav-item layoutChanger" href="#">Sidebar</a>
     </div>
   </nav>
-  <main style="height: 2000px;">
-    <header class="container"><h1>Iron Theme</h1></header>
-    <section class="container">
-      <h1>Layout</h1>
-      <p id="fixedHeaderToggleContainer">
-        <input type="checkbox" id="fixedHeaderToggle"/> <label for="fixedHeaderToggle">Fixed Header</label>
-      </p>
-      <p id="splitHeaderToggleContainer">
-        <input type="checkbox" id="splitHeaderToggle"/> <label for="splitHeaderToggle">Left Nav</label>
-      </p>
-    </section>
-    <section class="container">
-      <h1>Buttons</h1>
-      <p>Buttons can either be a button or an anchor with class "button".</p>
-      <p><a href="#" class="button">Anchor</a> <button>Button</button></p>
-      <p>Primary buttons can be styled by using the "primary" class.</p>
-      <p><a href="#" class="button primary">Anchor</a> <button class="primary">Button</button></p>
-      <p>Icon buttons are styled automatically when used with the "material-icons" class.</p>
-      <p>
-        <a href="#" class="button material-icons">phone</a>
-        <button class="material-icons">playlist_add</button>
-        <a href="#" class="button material-icons primary">add</a>
-      </p>
-      <p>A dense icon button (using the "dense" class), will make the icon inherit its font size, and use less padding.</p>
-      <p>
-        <a href="#" class="button material-icons dense">phone</a>
-        <button class="material-icons dense">playlist_add</button>
-        <a href="#" class="button material-icons primary dense">add</a>
-      </p>
-    </section>
+  <main>
+    <div class="container">
+      <h1>Iron Theme</h1>
+      <section>
+        <h2>Layout</h2>
+        <p>The Iron Theme can be used by adding the "layout" class to the root element of your website (i.e. the body element). All of the optional classes discussed below should be added/removed from the same root element.</p>
+        <h3>Responsiveness</h3>
+        <p>All mobile devices will use a stacked layout, with the navigation being a toggleable menu. A menu icon button should be used to toggle the "show-menu" class. This menu exposes itself by pushing the content to the right. It closes in the opposite direction.</p>
+        <h3>The Default Layout</h3>
+        <p>No class is needed to use this layout. This layout has a stacked header, nav, main, and footer. You have may have the optional "fixed-header" class to fix the header to the top. The navigation will hide while scrolling down, and be shown while scrolling up.</p>
+        <h3>The "Split Header" Layout</h3>
+        <p>Alongside the "layout" class, use the "split-header" class. This layout is the same as the default layout, but the header and nav are inline with each other. You may add the optional "left-nav" class to align the nav items to the left.</p>
+        <h3>The Sidebar Layout</h3>
+        <p>Alongside the "layout" class, use the "sidebar" class. This layout has the header on top, nav and main inline with each other, and the footer at the bottom of the nav.</p>
+        <h4>Current Layout Options</h4>
+        <p id="fixedHeaderToggleContainer">
+          <input type="checkbox" id="fixedHeaderToggle"/> <label for="fixedHeaderToggle">Fixed Header</label>
+        </p>
+        <p id="splitHeaderToggleContainer">
+          <input type="checkbox" id="splitHeaderToggle"/> <label for="splitHeaderToggle">Left Nav</label>
+        </p>
+      </section>
+      <section>
+        <h1>Buttons</h1>
+        <p>Buttons can either be a button or an anchor with class "button".</p>
+        <p><a href="#" class="button">Anchor</a> <button>Button</button></p>
+        <p>Primary buttons can be styled by using the "primary" class.</p>
+        <p><a href="#" class="button primary">Anchor</a> <button class="primary">Button</button></p>
+        <p>Icon buttons are styled automatically when used with the "material-icons" class.</p>
+        <p>
+          <a href="#" class="button material-icons">phone</a>
+          <button class="material-icons">playlist_add</button>
+          <a href="#" class="button material-icons primary">add</a>
+        </p>
+        <p>A dense icon button (using the "dense" class), will make the icon inherit its font size, and use less padding.</p>
+        <p>
+          <a href="#" class="button material-icons dense">phone</a>
+          <button class="material-icons dense">playlist_add</button>
+          <a href="#" class="button material-icons primary dense">add</a>
+        </p>
+      </section>
+    </div>
   </main>
   <footer>
     <div class="container">
