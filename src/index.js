@@ -5,20 +5,20 @@ var menuToggle = document.getElementById('menutoggle');
 
 // Handle scrolling event
 var position = 0;
-var scrollingUp = false;
+var scrollingDown = true;
 var scrollChange = function() {
-  if (scrollingUp) {
-    layout.classList.add('scrolling-up');
+  if (scrollingDown) {
+    layout.classList.add('scrolling-down');
   } else {
-    layout.classList.remove('scrolling-up');
+    layout.classList.remove('scrolling-down');
   }
 }
 window.onscroll = function() {
-  var newVal = position <= window.scrollY;
-  if (scrollingUp !== newVal) {
+  var newVal = position > window.scrollY;
+  if (scrollingDown !== newVal) {
     scrollChange();
   }
-  scrollingUp = newVal;
+  scrollingDown = newVal;
   position = window.scrollY;
 }
 
