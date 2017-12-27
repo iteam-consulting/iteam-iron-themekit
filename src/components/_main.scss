@@ -1,5 +1,6 @@
 main {
   @include standard-transition(transform);
+  padding: 16px 0;
   flex: 1;
 
   @media (min-width: $screen-md-min) {
