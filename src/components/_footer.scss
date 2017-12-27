@@ -1,0 +1,14 @@
+footer {
+  @include standard-transition(transform);
+  width: 100%;
+
+  .show-menu > & {
+    transform: translateX($nav-width);
+  }
+
+  @media (min-width: $screen-md-min) {
+    .layout.sidebar & {
+      margin-left: $nav-width;
+    }
+  }
+}

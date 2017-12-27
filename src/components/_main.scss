@@ -1,0 +1,19 @@
+main {
+  @include standard-transition(transform);
+  flex: 1;
+
+  @media (min-width: $screen-md-min) {
+    .layout.sidebar & {
+      margin-left: $nav-width;
+    }
+
+    .layout.split-header & {
+      width: 100%;
+      flex: initial;
+    }
+  }
+
+  .layout.show-menu & {
+    transform: translateX($nav-width);
+  }
+}

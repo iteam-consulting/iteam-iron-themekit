@@ -3,209 +3,32 @@
   flex-flow: row wrap;
   align-items: stretch;
   overflow-x: hidden;
+  padding-top: $header-height;
 
   @media (min-width: $screen-md-min) {
-    padding-top: 0;
-  }
-
-  &.fixed-header {
-    padding-top: $header-height;
-
-    > header {
-      position: fixed;
-      top: 0;
-    }
-  }
-}
-
-header {
-  align-items: center;
-  display: flex;
+    &.fixed-header {
+      padding-top: $header-height * 2;
   
-  .layout > & {
-    height: $header-height;
-    width: 100%;
-
-    &.hero {
-      height: calc(100vh - #{$nav-height});
-    }
-
-    .container {
-      padding: 0 16px;
-    }
-  }
-
-  button#menutoggle {
-    display: initial;
-    margin: 16px;
-  }
-
-  @media (min-width: $screen-md-min) {
-    button#menutoggle {
-      display: none;
-    }
-
-    .layout.split-header > & {
-      width: initial;
-
-      .container {
-        width: initial;
-      }
-    }
-  }
-}
-
-nav {
-  @include standard-transition(all);
-
-  .nav-item,
-  .nav-item:visited {
-    @include standard-transition(all);
-    align-items: center;
-    display: flex;
-    height: $header-height;
-    padding: 0 16px;
-    text-decoration: none;
-    color: inherit;
-    outline: 0;
-    width: 100%;
-
-    &:hover {
-      background-color: rgba(#000, 0.12);
-
-      .night & {
-        background-color: rgba(#fff, 0.12);
+      &.split-header,
+      &.sidebar {
+        padding-top: $header-height;
       }
     }
 
-    @media (min-width: $screen-md-min) {
-      width: initial;
-      padding: 0 8px;
+    &:not(.fixed-header):not(.sidebar) {
+      padding-top: 0;
     }
-  }
-
-  .layout > & {
-    @include standard-transition(transform);
-    height: calc(100vh - #{$header-height});
-    max-height: calc(100vh - #{$header-height});
-    overflow-y: auto;
-    position: fixed;
-    top: $header-height;
-    transform: translateX(-$nav-width);
-    width: $nav-width;
-
-    .container {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0;
-    }
-
-    @media (min-width: $screen-md-min) {
-      display: flex;
-      height: initial;
-      position: static;
-      transform: translateX(0);
-      width: 100%;
-
-      .container {
-        flex-direction: row;
-        align-items: center;
-        padding: 0 16px;
-      }
-    }
-    
-    .layout:not(.sidebar) {
-      height: $nav-height;
-    }
-
-    .container {
-      align-items: center;
-      padding: 0 16px;
-    }
-  }
-
-  .layout.split-header > & {
-    @media (min-width: $screen-md-min) {
-      flex: 1;
-      width: initial;
-
-      .container {
-        justify-content: flex-end;
-        margin: 0;
-        width: 100%;
-      }
-    }
-  }
-
-  .layout.split-header.left-nav > & {
-    @media (min-width: $screen-md-min) {
-      .container {
-        justify-content: flex-start;
-      }
-    }
-  }
-
-  .layout.sidebar > & {
-    @media (min-width: $screen-md-min) {
-      width: $nav-width;
-
-      .container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-      }
-
-      .nav-item {
-        width: 100%;
-        padding: 0 16px;
-      }
-    }
-  }
-
-  .layout.show-menu > & {
-    transform: translateX(0);
-  }
-}
-
-main {
-  @include standard-transition(transform);
-  flex: 1;
-
-  .layout.show-menu & {
-    transform: translateX($nav-width);
-  }
-
-  .layout.split-header & {
-    @media (min-width: $screen-md-min) {
-      width: 100%;
-      flex: initial;
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    position: static;
-  }
-}
-
-footer {
-  @include standard-transition(transform);
-  width: 100%;
-
-  .show-menu > & {
-    transform: translateX($nav-width);
-  }
-
-  @media (min-width: $screen-md-min) {
-    position: static;
   }
 }
 
 .container {
-  margin: 0 auto;
-  padding: 16px;
+  margin: 0;
+  padding: 0 16px;
   width: 100%;
 
   .layout:not(.sidebar) & {
+    margin: 0 auto;
+
     @media (min-width: $screen-sm-min) {
       width: $screen-sm-min;
     }
@@ -218,10 +41,6 @@ footer {
       width: $screen-lg-min;
     }
   }
-
-  .layout.sidebar & {
-    margin: 0;
-  }
 }
 
 .row {
@@ -231,7 +50,7 @@ footer {
 }
 
 .column {
-  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
 }

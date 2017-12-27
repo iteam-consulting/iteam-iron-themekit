@@ -1,0 +1,125 @@
+nav {
+  .layout > & {
+    @include standard-transition(transform);
+    height: calc(100vh - #{$header-height});
+    max-height: calc(100vh - #{$header-height});
+    overflow-y: auto;
+    position: fixed;
+    top: $header-height;
+    transform: translateX(-$nav-width);
+    width: $nav-width;
+    z-index: 9000;
+
+    .container {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .layout > & {
+      display: flex;
+      transform: translateX(0);
+
+      .container {
+        align-items: center;
+        flex-direction: row;
+        padding: 0 16px;
+      }
+    }
+
+    .layout.fixed-header:not(.sidebar):not(.split-header) > & {
+      @include standard-transition(transform);
+      position: fixed;
+      top: $header-height;
+      left: 0;
+      transform: translateY(-$nav-height);
+    }
+
+    .layout.fixed-header.scrolling-up:not(.sidebar):not(.split-header) > & {
+      transform: translateY(0);
+    }
+
+    .layout:not(.sidebar) > & {
+      height: $nav-height;
+      position: static;
+      width: 100%;
+    }
+
+    .layout.split-header > & {
+      flex: 1;
+      width: initial;
+
+      .container {
+        justify-content: flex-end;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .layout.split-header.fixed-header > & {
+    @media (min-width: $screen-md-min) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 75%;
+    }
+  }
+
+  .layout.split-header.left-nav > & {
+    @media (min-width: $screen-md-min) {
+      .container {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .layout.sidebar > & {
+    @media (min-width: $screen-md-min) {
+      width: $nav-width;
+
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+      }
+
+      .nav-item {
+        width: 100%;
+        padding: 0 16px;
+      }
+    }
+  }
+
+  .layout.show-menu > & {
+    transform: translateX(0);
+  }
+}
+
+.nav-item,
+.nav-item:visited {
+  @include standard-transition(all);
+  align-items: center;
+  display: flex;
+  height: $header-height;
+  padding: 0 16px;
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+  width: 100%;
+
+  &:hover {
+    background-color: rgba(#000, 0.12);
+
+    .night & {
+      background-color: rgba(#fff, 0.12);
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: initial;
+    padding: 0 8px;
+  }
+}

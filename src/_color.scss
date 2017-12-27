@@ -28,8 +28,10 @@ nav {
     color: contrast-text-color($bg);
   }
 
-  .layout.split-header > & {
-    background-color: $brand-color;
+  @media (min-width: $screen-md-min) {
+    .layout.split-header > & {
+      background-color: $brand-color;
+    }
   }
 }
 

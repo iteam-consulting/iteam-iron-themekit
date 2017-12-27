@@ -5,11 +5,17 @@
 @import 'mixins/animation';
 @import 'functions/contrast';
 
+// Components
+@import 'components/header';
+@import 'components/nav';
+@import 'components/main';
+@import 'components/footer';
+@import 'components/buttons';
+
 // Rules
 @import 'typography';
-@import 'layout';
 @import 'color';
-@import 'buttons';
+@import 'layout';
 
 // Global Styles
 *,
@@ -19,7 +25,7 @@
 }
 
 body {
-  @include standard-transition(all);
+  @include standard-transition(background);
   font-size: $font-size;
   margin: 0;
 }

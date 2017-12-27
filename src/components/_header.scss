@@ -1,0 +1,50 @@
+header {
+  align-items: center;
+  display: flex;
+  
+  .layout > & {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+
+    &.hero {
+      height: calc(100vh - #{$nav-height});
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+  }
+
+  #menutoggle {
+    display: initial;
+    margin: 16px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    #menutoggle {
+      display: none;
+    }
+
+    .layout.split-header > & {
+      width: 25%;
+      
+      .container {
+        width: initial;
+        margin: 0;
+      }
+    }
+
+    .layout:not(.fixed-header):not(.sidebar) > & {
+      position: static;
+    }
+  }
+
+  main & {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
