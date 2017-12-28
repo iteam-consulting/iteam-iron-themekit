@@ -1,7 +1,7 @@
 
 button,
 .button {
-  $padding: 8px;
+  $padding: 18px;
   @include standard-transition(background);
   background-color: transparent;
   border-radius: 3px;
@@ -9,8 +9,10 @@ button,
   color: inherit;
   cursor: pointer;
   display: inline-block;
+  font-weight: bold;
   min-width: 64px;
   padding: ($padding / 2) $padding;
+  text-align: center;
   text-decoration: none;
   
   &:hover {
