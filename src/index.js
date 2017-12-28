@@ -1,4 +1,5 @@
 import './theme.scss';
+import setupCards from './components/cards';
 
 var layout = document.querySelector('.layout');
 var menuToggle = document.getElementById('menutoggle');
@@ -22,10 +23,14 @@ window.onscroll = function() {
   position = window.scrollY;
 }
 
+// Setup cards
+setupCards();
+
 // Steps to take when the window loads
 window.onload = function() {
   // Setup the menu toggle
   menuToggle.addEventListener('click', function(e) {
     layout.classList.toggle('show-menu');
   });
+
 };
