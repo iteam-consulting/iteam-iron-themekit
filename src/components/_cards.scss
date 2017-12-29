@@ -44,6 +44,10 @@
     button,
     .button {
       border: none;
+
+      &:after {
+        z-index: 0;
+      }
     }
   }
 
