@@ -1,7 +1,7 @@
 
 button,
 .button {
-  $padding: 18px;
+  $padding: 26px;
   @include standard-transition(background);
   background-color: transparent;
   border-radius: 3px;
@@ -28,16 +28,16 @@ button,
   }
   
   &:not(.material-icons) {
+    font-family: $font-family-primary;
     font-size: 14px;
     text-transform: uppercase;
-    font-family: $font-family-primary;
   }
 
   // Primary Buttons
   &.primary {
-    background-color: $brand-color;
-    color: contrast-text-color($brand-color);
+    background: linear-gradient(90deg, adjust-hue($brand-color, 25) -20%, $brand-color 120%);
     border: none;
+    color: contrast-text-color($brand-color);
     position: relative;
 
     &:after {
@@ -66,14 +66,14 @@ button,
 
   // Icon Buttons
   &.material-icons {
-    padding: $padding;
     border-radius: 50%;
-    min-width: 0;
     border: none;
+    min-width: 0;
+    padding: 16px;
 
     // Dense
     &.dense {
-      padding: $padding / 2;
+      padding: 8px;
       font-size: 1em;
     }
 
