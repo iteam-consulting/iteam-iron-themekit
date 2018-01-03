@@ -250,7 +250,7 @@
             </tfoot>
           </table>
         </div>
-        <div style="padding: 32px 0; border-bottom: 1px solid #888">
+        <div style="padding: 32px 0;">
           <table class="celled">
               <thead>
                   <tr>
@@ -324,6 +324,8 @@
     var layout = document.querySelector('.layout');
     var layoutChangers = document.getElementsByClassName('layoutChanger');
     var nightToggle = document.getElementById('nighttoggle');
+    var fixedHeaderToggle = document.getElementById('fixedHeaderToggle');
+    var leftNavToggle = document.getElementById('splitHeaderToggle');
 
     var updateNightModeClasses = function (e) {
       var night;
@@ -367,11 +369,47 @@
       }
     }
 
+    var updateFixedHeader = function(e) {
+      var initialFixedHeader;
+      if (e) {
+        e.preventDefault();
+        initialFixedHeader = e.target.checked;
+        storage.setItem('initialFixedHeader', initialFixedHeader);
+      } else {
+        initialFixedHeader = storage.getItem('initialFixedHeader') === 'true';
+      }
+
+      fixedHeaderToggle.checked = initialFixedHeader;
+      if (initialFixedHeader) {
+        layout.classList.add('fixed-header');
+      } else {
+        layout.classList.remove('fixed-header');
+      }
+    }
+
+    var updateLeftNav = function(e) {
+      var initialLeftNav;
+      if (e) {
+        e.preventDefault();
+        initialLeftNav = e.target.checked;
+        storage.setItem('initialLeftNav', initialLeftNav);
+      } else {
+        initialLeftNav = storage.getItem('initialLeftNav') === 'true';
+      }
+
+      leftNavToggle.checked = initialLeftNav;
+      if (initialLeftNav) {
+        layout.classList.add('left-nav');
+      } else {
+        layout.classList.remove('left-nav');
+      }
+    }
+
     // Get initial layout
     updateLayout();
-
-    // Get current mode
     updateNightModeClasses();
+    updateFixedHeader();
+    updateLeftNav();
 
     // Setup the night mode toggle
     nightToggle.addEventListener('click', updateNightModeClasses);
@@ -382,14 +420,10 @@
     }
 
     // Setup the checkbox for the fixed header
-    document.getElementById('fixedHeaderToggle').addEventListener('change', function (e) {
-      layout.classList.toggle('fixed-header');
-    });;
+    fixedHeaderToggle.addEventListener('change', updateFixedHeader);;
 
     // Setup the checkbox for the left nav
-    document.getElementById('splitHeaderToggle').addEventListener('change', function (e) {
-      layout.classList.toggle('left-nav');
-    });
+    leftNavToggle.addEventListener('change', updateLeftNav);
   </script>
 </body>
 
