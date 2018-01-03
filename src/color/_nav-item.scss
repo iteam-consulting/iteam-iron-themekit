@@ -1,0 +1,12 @@
+.nav-item,
+.nav-item:visited {
+  color: inherit;
+
+  &:hover {
+    background-color: rgba(#000, 0.12);
+
+    .night & {
+      background-color: rgba(#fff, 0.12);
+    }
+  }
+}
