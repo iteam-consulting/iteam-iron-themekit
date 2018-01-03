@@ -3,21 +3,14 @@
 
 // Mixins and functions
 @import 'mixins/animation';
+@import 'functions/bright';
 @import 'functions/contrast';
 
-// Rules
+// Rules (in order)
 @import 'typography';
-@import 'color';
 @import 'layout';
-
-// Components
-@import 'components/buttons';
-@import 'components/cards';
-@import 'components/footer';
-@import 'components/header';
-@import 'components/main';
-@import 'components/nav';
-@import 'components/nav-item';
+@import 'components/index';
+@import 'color/index';
 
 // Global Styles
 *,

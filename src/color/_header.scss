@@ -1,0 +1,6 @@
+header {
+  .layout > & {
+    background-color: $brand-color;
+    color: contrast-text-color($brand-color);
+  }
+}

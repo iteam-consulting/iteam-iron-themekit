@@ -1,0 +1,18 @@
+nav {
+  .layout > & {
+    background-color: $brand-lighter;
+    color: contrast-text-color($brand-lighter);
+  }
+
+  .layout.night > & {
+    background-color: $brand-darker;
+    color: contrast-text-color($brand-darker);
+  }
+
+  @media (min-width: $screen-md-min) {
+    .layout.split-header > & {
+      background-color: $brand-color;
+      color: contrast-text-color($brand-color);
+    }
+  }
+}

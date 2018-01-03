@@ -1,0 +1,85 @@
+// TABLES
+table {
+  $border-non-body: 80%;
+  // Day Percentages
+  $bg-odd-day: 92.5%;
+  $bg-hover-day: 85%;
+  $border-day: 80%;
+  // Night Percentages
+  $bg-odd-night: 100% - $bg-odd-day;
+  $bg-hover-night: 100% - $bg-hover-day;
+  $border-night: 100% - $border-day;
+
+  thead th {
+    background-color: $brand-color;
+    color: contrast-text-color($brand-color);
+  }
+
+  tbody td.number.negative {
+    color: red;
+  }
+
+  tfoot td {
+    background-color: $brand-lighter;
+    color: contrast-text-color($brand-lighter);
+
+    .night & {
+      background-color: $brand-darker;
+      color: contrast-text-color($brand-darker);
+    }
+  }
+
+  &.striped tbody tr:nth-child(2n+1) td {
+    background-color: bright($bg-odd-day);
+    color: contrast-text-color(bright($bg-odd-day));
+
+    .night & {
+      background-color: bright($bg-odd-night);
+      color: contrast-text-color(bright($bg-odd-night));
+    }
+  }
+
+  &.selectable tbody tr:hover td {
+    background-color: bright($bg-hover-day);
+    color: contrast-text-color(bright($bg-hover-day));
+
+    .night & {
+      background-color: bright($bg-hover-night);
+      color: contrast-text-color(bright($bg-hover-night));
+    }
+  }
+
+  &.bordered tbody td {
+    border-color: bright($border-day);
+
+    .night & {
+      border-color: bright($border-night);
+    }
+  }
+
+  &.celled {
+    thead th {
+      border-color: mix($brand-color, $bg-dark, $border-non-body);
+
+      .night & {
+        border-color: mix($brand-color, $bg-light, $border-non-body);
+      }
+    }
+
+    tbody td {
+      border-color: bright($border-day);
+
+      .night & {
+        border-color: bright($border-night);
+      }
+    }
+
+    tfoot td {
+      border-color: mix($brand-lighter, $bg-dark, $border-non-body);
+
+      .night & {
+        border-color: mix($brand-darker, $bg-light, $border-non-body);
+      }
+    }
+  }
+}

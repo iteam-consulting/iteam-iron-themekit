@@ -1,0 +1,8 @@
+// CARDS
+.card {
+  background-color: lighten($bg-light, 5%);
+
+  .night & {
+    background-color: lighten($bg-dark, 5%);
+  }
+}

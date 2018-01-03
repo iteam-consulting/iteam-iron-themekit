@@ -1,0 +1,3 @@
+@function bright($percent) {
+  @return mix($bg-light, $bg-dark, $percent);
+}

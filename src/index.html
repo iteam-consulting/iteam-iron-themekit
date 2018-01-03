@@ -5,8 +5,6 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon-32x32.png?v=2" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png?v=2" sizes="16x16" />
   <style>
@@ -33,12 +31,7 @@
 <body class="layout">
   <header>
     <div class="container row">
-      <button
-          id="menutoggle"
-          aria-haspopup="true"
-          aria-controls="navmenu"
-          class="material-icons"
-      >
+      <button id="menutoggle" aria-haspopup="true" aria-controls="navmenu" class="material-icons">
         menu
       </button>
       <a class="nav-item" href="/">iTEAM Iron Themekit</a>
@@ -59,37 +52,53 @@
       <h1>Iron Theme</h1>
       <section>
         <h2>Layout</h2>
-        <p>The Iron Theme can be used by adding the "layout" class to the root element of your website (i.e. the body element). All of the optional classes discussed below should be added/removed from the same root element.</p>
+        <p>The Iron Theme can be used by adding the "layout" class to the root element of your website (i.e. the body element).
+          All of the optional classes discussed below should be added/removed from the same root element.</p>
         <h3>Responsiveness</h3>
-        <p>All mobile devices will use a stacked layout, with the navigation being a toggleable menu. A menu icon button should be used to toggle the "show-menu" class. This menu exposes itself by pushing the content to the right. It closes in the opposite direction.</p>
+        <p>All mobile devices will use a stacked layout, with the navigation being a toggleable menu. A menu icon button should
+          be used to toggle the "show-menu" class. This menu exposes itself by pushing the content to the right. It closes
+          in the opposite direction.</p>
         <h3>The Default Layout</h3>
-        <p>No class is needed to use this layout. This layout has a stacked header, nav, main, and footer. You have may have the optional "fixed-header" class to fix the header to the top. The navigation will hide while scrolling down, and be shown while scrolling up.</p>
+        <p>No class is needed to use this layout. This layout has a stacked header, nav, main, and footer. You have may have
+          the optional "fixed-header" class to fix the header to the top. The navigation will hide while scrolling down,
+          and be shown while scrolling up.</p>
         <h3>The "Split Header" Layout</h3>
-        <p>Alongside the "layout" class, use the "split-header" class. This layout is the same as the default layout, but the header and nav are inline with each other. You may add the optional "left-nav" class to align the nav items to the left.</p>
+        <p>Alongside the "layout" class, use the "split-header" class. This layout is the same as the default layout, but the
+          header and nav are inline with each other. You may add the optional "left-nav" class to align the nav items to
+          the left.</p>
         <h3>The Sidebar Layout</h3>
-        <p>Alongside the "layout" class, use the "sidebar" class. This layout has the header on top, nav and main inline with each other, and the footer at the bottom of the nav.</p>
+        <p>Alongside the "layout" class, use the "sidebar" class. This layout has the header on top, nav and main inline with
+          each other, and the footer at the bottom of the nav.</p>
         <h4>Current Layout Options</h4>
         <p id="fixedHeaderToggleContainer">
-          <input type="checkbox" id="fixedHeaderToggle"/> <label for="fixedHeaderToggle">Fixed Header</label>
+          <input type="checkbox" id="fixedHeaderToggle" />
+          <label for="fixedHeaderToggle">Fixed Header</label>
         </p>
         <p id="splitHeaderToggleContainer">
-          <input type="checkbox" id="splitHeaderToggle"/> <label for="splitHeaderToggle">Left Nav</label>
+          <input type="checkbox" id="splitHeaderToggle" />
+          <label for="splitHeaderToggle">Left Nav</label>
         </p>
       </section>
       <section>
         <h1>Buttons</h1>
         <p>Buttons can either be a button or an anchor with class "button".</p>
-        <p><a href="#" class="button">Anchor</a> <button>Button</button></p>
+        <p style="display: flex">
+          <a href="#" class="button">Anchor</a>
+          <button>Button</button>
+        </p>
         <p>Primary buttons can be styled by using the "primary" class.</p>
-        <p><a href="#" class="button primary">Anchor</a> <button class="primary">Button</button></p>
+        <p style="display: flex">
+          <a href="#" class="button primary">Anchor</a>
+          <button class="primary">Button</button>
+        </p>
         <p>Icon buttons are styled automatically when used with the "material-icons" class.</p>
-        <p>
+        <p style="display: flex">
           <a href="#" class="button material-icons">phone</a>
           <button class="material-icons">playlist_add</button>
           <a href="#" class="button material-icons primary">add</a>
         </p>
         <p>A dense icon button (using the "dense" class), will make the icon inherit its font size, and use less padding.</p>
-        <p>
+        <p style="display: flex">
           <a href="#" class="button material-icons dense">phone</a>
           <button class="material-icons dense">playlist_add</button>
           <a href="#" class="button material-icons primary dense">add</a>
@@ -97,12 +106,15 @@
       </section>
       <section>
         <h2>Cards</h2>
-        <p>Cards are figures that have 4 components: header, image, caption, and actions. Cards must include at least two of these components, and must include an image and/or caption. Multiple cards can belong to a "deck".</p>
+        <p>Cards are figures that have 4 components: header, image, caption, and actions. Cards must include at least two of
+          these components, and must include an image and/or caption. Multiple cards can belong to a "deck".</p>
         <h3>Example of a single card.</h3>
         <figure class="card">
           <header>Card #1</header>
           <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
-          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
+          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet
+            malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum.
+            Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
           <div class="actions">
             <a href="#" class="button">Link</a>
           </div>
@@ -111,7 +123,9 @@
         <div class="deck">
           <figure class="card">
             <header>Card #1</header>
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
+            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
+              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
+              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
           </figure>
           <figure class="card">
             <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
@@ -119,7 +133,9 @@
           </figure>
           <figure class="card">
             <header>Card #3</header>
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
+            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
+              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
+              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
             <div class="actions">
               <a href="#" class="button">Link</a>
             </div>
@@ -137,11 +153,151 @@
             <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
           </figure>
           <figure class="card">
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
+            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
+              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
+              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
             <div class="actions">
               <a href="#" class="button">Link</a>
             </div>
           </figure>
+        </div>
+      </section>
+      <section>
+        <h2>Tables</h2>
+        <div style="padding: 32px 0; border-bottom: 1px solid #888">
+          <table class="striped selectable">
+            <thead>
+              <tr>
+                <th colspan="4">Striped and Selectable Table</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Column #1</td>
+                <td>Column #2</td>
+                <td>Column #3</td>
+                <td>Column #4</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #888">
+          <table class="bordered">
+            <thead>
+              <tr>
+                <th colspan="4">Bordered Table</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+              <tr>
+                <td>Cell #1</td>
+                <td>Cell #2</td>
+                <td>Cell #3</td>
+                <td>Cell #4</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Column #1</td>
+                <td>Column #2</td>
+                <td>Column #3</td>
+                <td>Column #4</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div style="padding: 32px 0; border-bottom: 1px solid #888">
+          <table class="celled">
+              <thead>
+                  <tr>
+                    <th colspan="4">Celled Number Table</th>
+                  </tr>
+                  <tr>
+                    <th class="number">Column #1</th>
+                    <th class="number">Column #2</th>
+                    <th class="number">Column #3</th>
+                    <th class="number">Column #4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number">$678.90</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number">$678.90</td>
+                    <td class="number negative" colspan="2">($246.90)</td>
+                  </tr>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number" rowspan="2">$678.90</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number">$678.90</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number">$678.90</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td class="number">$123.45</td>
+                    <td class="number">$678.90</td>
+                    <td class="number negative">($123.45)</td>
+                    <td class="number negative">($678.90)</td>
+                  </tr>
+                </tfoot>
+          </table>
         </div>
       </section>
     </div>
@@ -157,7 +313,7 @@
     var layoutChangers = document.getElementsByClassName('layoutChanger');
     var nightToggle = document.getElementById('nighttoggle');
 
-    var updateNightModeClasses = function(e) {
+    var updateNightModeClasses = function (e) {
       var night;
       if (e) {
         e.preventDefault();
@@ -176,7 +332,7 @@
       }
     }
 
-    var updateLayout = function(e) {
+    var updateLayout = function (e) {
       var initialLayout;
       if (e) {
         e.preventDefault();
@@ -214,12 +370,12 @@
     }
 
     // Setup the checkbox for the fixed header
-    document.getElementById('fixedHeaderToggle').addEventListener('change', function(e) {
+    document.getElementById('fixedHeaderToggle').addEventListener('change', function (e) {
       layout.classList.toggle('fixed-header');
     });;
 
     // Setup the checkbox for the left nav
-    document.getElementById('splitHeaderToggle').addEventListener('change', function(e) {
+    document.getElementById('splitHeaderToggle').addEventListener('change', function (e) {
       layout.classList.toggle('left-nav');
     });
   </script>
