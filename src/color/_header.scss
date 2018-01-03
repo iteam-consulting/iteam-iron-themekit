@@ -1,6 +1,23 @@
 header {
-  .layout > & {
+  .layout > &,
+  .layout.night > & {
+    $color: contrast-text-color($brand-color); 
     background-color: $brand-color;
-    color: contrast-text-color($brand-color);
+    color: $color;
+
+    .nav-item {
+      color: $color !important;
+
+      &:hover {
+        background-color: rgba($color, 0.12) !important;
+      }
+    }
+
+    button,
+    .button {
+      &:after {
+        background-color: $color !important;
+      }
+    }
   }
 }

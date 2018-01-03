@@ -1,3 +1,5 @@
+// This function will return a color between the light and dark color, where the
+// the light color is weighted by the given $percent.
 @function bright($percent) {
   @return mix($bg-light, $bg-dark, $percent);
 }
