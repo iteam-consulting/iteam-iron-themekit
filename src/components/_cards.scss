@@ -6,6 +6,7 @@
   display: flex;
   flex-flow: column nowrap;
   margin: 8px;
+  max-width: 100%;
   width: 320px;
 
   > * {
@@ -13,8 +14,8 @@
   }
 
   > header {
-    font-size: 1.15rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 1.15rem;
   }
 
   // This gets replaced with .img
@@ -29,9 +30,9 @@
   }
 
   > figcaption {
+    flex: 1;
     font-size: .85rem;
     padding: 4px 8px;
-    flex: 1;
   }
 
   > .actions {

@@ -1,14 +1,16 @@
 .layout {
   display: flex;
-  flex-flow: row wrap;
-  align-items: stretch;
+  flex-flow: column nowrap;
   overflow-x: hidden;
   padding-top: $header-height;
 
   @media (min-width: $screen-md-min) {
+    align-items: stretch;
+    flex-flow: row wrap;
+
     &.fixed-header {
       padding-top: $header-height * 2;
-  
+
       &.split-header,
       &.sidebar {
         padding-top: $header-height;
@@ -36,6 +38,12 @@
       width: $screen-lg-min;
     }
   }
+}
+
+.responsive-container {
+  margin: 0;
+  overflow-x: auto;
+  width: 100%;
 }
 
 .row {
