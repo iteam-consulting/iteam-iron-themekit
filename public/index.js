@@ -1,13 +1,14 @@
 var storage = window.localStorage;
 var layout = document.querySelector('.layout');
 var layoutChangers = document.getElementsByClassName('layoutChanger');
+var codeShowers = document.getElementsByClassName('show-code');
 var nightToggle = document.getElementById('nighttoggle');
 var toggles = {
   ['fixed-header']: document.getElementById('fixedHeaderToggle'),
   ['left-nav']: document.getElementById('splitHeaderToggle'),
 }
 
-var updateNightModeClasses = function (e) {
+function updateNightModeClasses(e) {
   var night;
   if (e) {
     e.preventDefault();
@@ -26,7 +27,7 @@ var updateNightModeClasses = function (e) {
   }
 }
 
-var updateLayout = function (e) {
+function updateLayout(e) {
   var initialLayout;
   if (e) {
     e.preventDefault();
@@ -86,4 +87,24 @@ toggles['fixed-header'].addEventListener('change', updatedCheckbox('fixed-header
 toggles['left-nav'].addEventListener('change', updatedCheckbox('left-nav'));
 for (var i = 0; i < layoutChangers.length; i++) {
   layoutChangers[i].addEventListener('click', updateLayout);
+}
+
+for (var i = 0; i < codeShowers.length; i++) {
+  var elem = codeShowers[i];
+
+  // Summary
+  var summary = document.createElement('summary');
+  summary.innerText = 'View Source';
+
+  // Source
+  var source = elem.previousElementSibling.innerHTML.trim();
+  var pre = document.createElement('pre');
+  var code = document.createElement('code');
+  code.innerText = source;
+  code.classList.add('html');
+  pre.appendChild(code);
+
+  // Append
+  elem.appendChild(summary);
+  elem.appendChild(pre);
 }

@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" href="favicon-32x32.png?v=2" sizes="32x32" />
   <link rel="icon" type="image/png" href="favicon-16x16.png?v=2" sizes="16x16" />
   <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" href="highlight/vs2015.css">
+  <script src="highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body class="layout">
@@ -65,240 +68,269 @@
         <h1>Buttons</h1>
         <p>Buttons can either be a button or an anchor with class "button".</p>
         <p style="display: flex">
-          <a href="#" class="button">Anchor</a>
-          <button>Button</button>
+<a href="#" class="button">Anchor</a>
+<button>Button</button>
         </p>
+        <details class="show-code"></details>
         <p>Primary buttons can be styled by using the "primary" class.</p>
         <p style="display: flex">
-          <a href="#" class="button primary">Anchor</a>
-          <button class="primary">Button</button>
+<a href="#" class="button primary">Anchor</a>
+<button class="primary">Button</button>
         </p>
+        <details class="show-code"></details>
         <p>Icon buttons are styled automatically when used with the "material-icons" class.</p>
         <p style="display: flex">
-          <a href="#" class="button material-icons">phone</a>
-          <button class="material-icons">playlist_add</button>
-          <a href="#" class="button material-icons primary">add</a>
+<a href="#" class="button material-icons">phone</a>
+<button class="material-icons">playlist_add</button>
+<a href="#" class="button material-icons primary">add</a>
         </p>
+        <details class="show-code"></details>
         <p>A dense icon button (using the "dense" class), will make the icon inherit its font size, and use less padding.</p>
         <p style="display: flex">
-          <a href="#" class="button material-icons dense">phone</a>
-          <button class="material-icons dense">playlist_add</button>
-          <a href="#" class="button material-icons primary dense">add</a>
+<a href="#" class="button material-icons dense">phone</a>
+<button class="material-icons dense">playlist_add</button>
+<a href="#" class="button material-icons primary dense">add</a>
         </p>
+        <details class="show-code"></details>
       </section>
       <section>
         <h2>Cards</h2>
         <p>Cards are figures that have 4 components: header, image, caption, and actions. Cards must include at least two of
           these components, and must include an image and/or caption. Multiple cards can belong to a "deck".</p>
         <h3>Example of a single card.</h3>
-        <figure class="card">
-          <header>Card #1</header>
-          <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
-          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus imperdiet
-            malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non condimentum.
-            Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
-          <div class="actions">
-            <a href="#" class="button">Link</a>
-          </div>
-        </figure>
-        <h3>Example of a deck of cards.</h3>
-        <div class="deck">
-          <figure class="card">
-            <header>Card #1</header>
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
-              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
-              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
-          </figure>
-          <figure class="card">
-            <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
-            <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
-          </figure>
-          <figure class="card">
-            <header>Card #3</header>
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
-              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
-              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
-            <div class="actions">
-              <a href="#" class="button">Link</a>
-            </div>
-          </figure>
-          <figure class="card">
-            <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
-            <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
-            <div class="actions">
-              <a href="#" class="button">Link</a>
-            </div>
-          </figure>
-          <figure class="card">
-            <header>Card #5</header>
-            <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
-            <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
-          </figure>
-          <figure class="card">
-            <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur vel nibh sed pretium. Phasellus
-              imperdiet malesuada ornare. Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
-              condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci pulvinar tincidunt congue in nisl.</figcaption>
-            <div class="actions">
-              <a href="#" class="button">Link</a>
-            </div>
-          </figure>
+        <div>
+<figure class="card">
+  <header>Card #1</header>
+  <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
+  <figcaption>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consectetur
+    vel nibh sed pretium. Phasellus imperdiet malesuada ornare. Cras orci quam,
+    tempor quis auctor in, faucibus eget enim. Ut rhoncus ac nisi non
+    condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi a orci
+    pulvinar tincidunt congue in nisl.
+  </figcaption>
+  <div class="actions">
+    <a href="#" class="button">Link</a>
+  </div>
+</figure>
         </div>
+        <details class="show-code"></details>
+        <h3>Example of a deck of cards.</h3>
+        <div>
+<div class="deck">
+  <figure class="card">
+    <header>Card #1</header>
+    <figcaption>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+      consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare.
+      Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac
+      nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi
+      a orci pulvinar tincidunt congue in nisl.
+    </figcaption>
+  </figure>
+  <figure class="card">
+    <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
+    <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
+  </figure>
+  <figure class="card">
+    <header>Card #3</header>
+    <figcaption>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+      consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare.
+      Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac
+      nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi
+      a orci pulvinar tincidunt congue in nisl.
+    </figcaption>
+    <div class="actions">
+      <a href="#" class="button">Link</a>
+    </div>
+  </figure>
+  <figure class="card">
+    <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
+    <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
+    <div class="actions">
+      <a href="#" class="button">Link</a>
+    </div>
+  </figure>
+  <figure class="card">
+    <header>Card #5</header>
+    <img src="http://www.qygjxz.com/data/out/114/4676052-image.png" alt="Iron" />
+    <figcaption>Images should always be use the 4:3 aspect ratio.</figcaption>
+  </figure>
+  <figure class="card">
+    <figcaption>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+      consectetur vel nibh sed pretium. Phasellus imperdiet malesuada ornare.
+      Cras orci quam, tempor quis auctor in, faucibus eget enim. Ut rhoncus ac
+      nisi non condimentum. Mauris sed vestibulum est. Curabitur sit amet nisi
+      a orci pulvinar tincidunt congue in nisl.
+    </figcaption>
+    <div class="actions">
+      <a href="#" class="button">Link</a>
+    </div>
+  </figure>
+</div>
+        </div>
+        <details class="show-code"></details>
       </section>
       <section>
         <h2>Tables</h2>
         <div class="responsive-container">
-          <table class="striped selectable">
-            <thead>
-              <tr>
-                <th colspan="4">Striped and Selectable Table</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Column #1</td>
-                <td>Column #2</td>
-                <td>Column #3</td>
-                <td>Column #4</td>
-              </tr>
-            </tfoot>
-          </table>
+<table class="striped selectable">
+  <thead>
+    <tr>
+      <th colspan="4">Striped and Selectable Table</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Column #1</td>
+      <td>Column #2</td>
+      <td>Column #3</td>
+      <td>Column #4</td>
+    </tr>
+  </tfoot>
+</table>
         </div>
+        <details class="show-code"></details>
         <br />
         <hr />
         <br />
         <div class="responsive-container">
-          <table class="bordered">
-            <thead>
-              <tr>
-                <th colspan="4">Bordered Table</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-              <tr>
-                <td>Cell #1</td>
-                <td>Cell #2</td>
-                <td>Cell #3</td>
-                <td>Cell #4</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Column #1</td>
-                <td>Column #2</td>
-                <td>Column #3</td>
-                <td>Column #4</td>
-              </tr>
-            </tfoot>
-          </table>
+<table class="bordered">
+  <thead>
+    <tr>
+      <th colspan="4">Bordered Table</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+    <tr>
+      <td>Cell #1</td>
+      <td>Cell #2</td>
+      <td>Cell #3</td>
+      <td>Cell #4</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Column #1</td>
+      <td>Column #2</td>
+      <td>Column #3</td>
+      <td>Column #4</td>
+    </tr>
+  </tfoot>
+</table>
         </div>
+        <details class="show-code"></details>
         <br />
         <hr />
         <br />
         <div class="responsive-container">
-          <table class="celled">
-              <thead>
-                  <tr>
-                    <th colspan="4">Celled Number Table</th>
-                  </tr>
-                  <tr>
-                    <th>Column #1</th>
-                    <th class="number">Column #2</th>
-                    <th class="number">Column #3</th>
-                    <th class="number">Column #4</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Row #1</td>
-                    <td class="number">$678.90</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                  <tr>
-                    <td>Row #2</td>
-                    <td class="number">$678.90</td>
-                    <td class="number negative" colspan="2">($246.90)</td>
-                  </tr>
-                  <tr>
-                    <td>Row #3</td>
-                    <td class="number" rowspan="2">$678.90</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                  <tr>
-                    <td>Row #4</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Row #5</td>
-                    <td class="number">$678.90</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                  <tr>
-                    <td>Row #6</td>
-                    <td class="number">$678.90</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td>Total Row</td>
-                    <td class="number">$678.90</td>
-                    <td class="number negative">($123.45)</td>
-                    <td class="number negative">($678.90)</td>
-                  </tr>
-                </tfoot>
-          </table>
+<table class="celled">
+  <thead>
+    <tr>
+      <th colspan="4">Celled Number Table</th>
+    </tr>
+    <tr>
+      <th>Column #1</th>
+      <th class="number">Column #2</th>
+      <th class="number">Column #3</th>
+      <th class="number">Column #4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row #1</td>
+      <td class="number">$678.90</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+    <tr>
+      <td>Row #2</td>
+      <td class="number">$678.90</td>
+      <td class="number negative" colspan="2">($246.90)</td>
+    </tr>
+    <tr>
+      <td>Row #3</td>
+      <td class="number" rowspan="2">$678.90</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+    <tr>
+      <td>Row #4</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Row #5</td>
+      <td class="number">$678.90</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+    <tr>
+      <td>Row #6</td>
+      <td class="number">$678.90</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total Row</td>
+      <td class="number">$678.90</td>
+      <td class="number negative">($123.45)</td>
+      <td class="number negative">($678.90)</td>
+    </tr>
+  </tfoot>
+</table>
         </div>
+        <details class="show-code"></details>
       </section>
     </div>
   </main>
