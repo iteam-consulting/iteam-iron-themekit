@@ -3,8 +3,8 @@ var layout = document.querySelector('.layout');
 var layoutChangers = document.getElementsByClassName('layoutChanger');
 var nightToggle = document.getElementById('nighttoggle');
 var toggles = {
-  'fixed-header': document.getElementById('fixedHeaderToggle'),
-  'left-nav': document.getElementById('fixedHeaderToggle'),
+  ['fixed-header']: document.getElementById('fixedHeaderToggle'),
+  ['left-nav']: document.getElementById('splitHeaderToggle'),
 }
 
 var updateNightModeClasses = function (e) {
@@ -78,8 +78,8 @@ function updatedCheckbox(className) {
 
 updateLayout();
 updateNightModeClasses();
-updatedCheckbox('fixed-header');
-updatedCheckbox('left-nav');
+updatedCheckbox('fixed-header')();
+updatedCheckbox('left-nav')();
 
 nightToggle.addEventListener('click', updateNightModeClasses);
 toggles['fixed-header'].addEventListener('change', updatedCheckbox('fixed-header'));
