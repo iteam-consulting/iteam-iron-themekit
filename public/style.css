@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  #fixedHeaderToggleContainer {
+    display: none;
+  }
+
+  #splitHeaderToggleContainer {
+    display: none;
+  }
+}
+
+.layout.sidebar #fixedHeaderToggleContainer {
+  display: none;
+}
+
+.layout:not(.split-header) #splitHeaderToggleContainer {
+  display: none;
+}
