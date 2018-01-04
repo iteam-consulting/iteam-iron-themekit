@@ -1,0 +1,175 @@
+/* DAYTIME THEME */
+/* Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name> */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: white;
+  color: black;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-variable {
+  color: #008000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-name,
+.hljs-tag {
+  color: #00f;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-addition {
+  color: #a31515;
+}
+
+.hljs-deletion,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-meta {
+  color: #2b91af;
+}
+
+.hljs-doctag {
+  color: #808080;
+}
+
+.hljs-attr {
+  color: #f00;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #00b0e8;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* NIGHTTIME THEME */
+/* Visual Studio 2015 dark style styled by Nicolas LLOBERA <nllobera@gmail.com> */
+.night .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1E1E1E;
+  color: #DCDCDC;
+}
+
+.night .hljs-keyword,
+.night .hljs-literal,
+.night .hljs-symbol,
+.night .hljs-name {
+  color: #569CD6;
+}
+
+.night .hljs-link {
+  color: #569CD6;
+  text-decoration: underline;
+}
+
+.night .hljs-built_in,
+.night .hljs-type {
+  color: #4EC9B0;
+}
+
+.night .hljs-number,
+.night .hljs-class {
+  color: #B8D7A3;
+}
+
+.night .hljs-string,
+.night .hljs-meta-string {
+  color: #D69D85;
+}
+
+.night .hljs-regexp,
+.night .hljs-template-tag {
+  color: #9A5334;
+}
+
+.night .hljs-subst,
+.night .hljs-function,
+.night .hljs-title,
+.night .hljs-params,
+.night .hljs-formula {
+  color: #DCDCDC;
+}
+
+.night .hljs-comment,
+.night .hljs-quote {
+  color: #57A64A;
+  font-style: italic;
+}
+
+.night .hljs-doctag {
+  color: #608B4E;
+}
+
+.night .hljs-meta,
+.night .hljs-meta-keyword,
+.night .hljs-tag {
+  color: #9B9B9B;
+}
+
+.night .hljs-variable,
+.night .hljs-template-variable {
+  color: #BD63C5;
+}
+
+.night .hljs-attr,
+.night .hljs-attribute,
+.night .hljs-builtin-name {
+  color: #9CDCFE;
+}
+
+.night .hljs-section {
+  color: gold;
+}
+
+.night .hljs-emphasis {
+  font-style: italic;
+}
+
+.night .hljs-strong {
+  font-weight: bold;
+}
+
+.night .hljs-bullet,
+.night .hljs-selector-tag,
+.night .hljs-selector-id,
+.night .hljs-selector-class,
+.night .hljs-selector-attr,
+.night .hljs-selector-pseudo {
+  color: #D7BA7D;
+}
+
+.night .hljs-addition {
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
+}
+
+.night .hljs-deletion {
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
+}

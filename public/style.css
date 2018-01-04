@@ -17,20 +17,20 @@
 }
 
 details.show-code {
-  background-color: #666;
+  transition: all ease-in-out .3s;
+  background-color: #ddd;
   border-radius: 3px;
-  border: 1px solid #444;
+  border: 1px solid #ccc;
   padding: 6px 12px;
-  color: #eee;
+  color: #222;
 }
 
-// details.show-code code {
-//   background-color: #212121;
-//   border-radius: 3px;
-//   border: 1px solid #121212;
-//   padding: 16px;
-//   color: #eee;
-//   display: block;
-//   white-space: pre-wrap;
-//   margin-top: 16px;
-// }
+.night details.show-code {
+  background-color: #333;
+  border-color: #111;
+  color: #ddd;
+}
+
+summary {
+  cursor: pointer;
+}
