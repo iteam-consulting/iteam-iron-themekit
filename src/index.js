@@ -1,13 +1,24 @@
 import './theme.scss';
 import setupCards from './components/cards';
+import {setupLoadables} from './components/loadable';
 
 var layout = document.querySelector('.layout');
-var menuToggle = document.getElementById('menutoggle');
+
+setupCards();
+setupLoadables();
+
+// Steps to take when the window loads
+window.onload = function() {
+  // Setup the menu toggle
+  document.getElementById('menutoggle').addEventListener('click', function(e) {
+    layout.classList.toggle('show-menu');
+  });
+};
 
 // Handle scrolling event
 var position = 0;
 var scrollingDown = true;
-var scrollChange = function() {
+function scrollChange() {
   if (scrollingDown) {
     layout.classList.add('scrolling-down');
   } else {
@@ -22,15 +33,3 @@ window.onscroll = function() {
   scrollingDown = newVal;
   position = window.scrollY;
 }
-
-// Setup cards
-setupCards();
-
-// Steps to take when the window loads
-window.onload = function() {
-  // Setup the menu toggle
-  menuToggle.addEventListener('click', function(e) {
-    layout.classList.toggle('show-menu');
-  });
-
-};

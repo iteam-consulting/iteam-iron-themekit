@@ -1,0 +1,16 @@
+.__iron-loader {
+  @include standard-transition(background);
+  background: rgba($bg-light, .92);
+
+  .night & {
+    background: rgba($bg-dark, .92);
+  }
+
+  .__iron-loader-line {
+    background: $brand-color;
+  }
+
+  .__iron-loader-message {
+    color: $brand-color;
+  }
+}

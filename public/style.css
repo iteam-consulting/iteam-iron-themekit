@@ -34,3 +34,7 @@ details.show-code {
 summary {
   cursor: pointer;
 }
+
+code {
+  font-size: 14px;
+}

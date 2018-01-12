@@ -77,6 +77,15 @@ function updatedCheckbox(className) {
   }
 }
 
+function toggleLoader(id) {
+  var loadable = document.getElementById(id)._loadableInstance;
+  if (loadable._loader) {
+    loadable.stopLoading();
+  } else {
+    loadable.startLoading();
+  }
+}
+
 updateLayout();
 updateNightModeClasses();
 updatedCheckbox('fixed-header')();
@@ -100,7 +109,7 @@ for (var i = 0; i < codeShowers.length; i++) {
   var source = elem.previousElementSibling.innerHTML.trim();
   var pre = document.createElement('pre');
   var code = document.createElement('code');
-  code.innerText = source;
+  code.innerText = html_beautify(source, { indent_size: 2 });
   code.classList.add('html');
   pre.appendChild(code);
 
@@ -108,3 +117,24 @@ for (var i = 0; i < codeShowers.length; i++) {
   elem.appendChild(summary);
   elem.appendChild(pre);
 }
+
+
+// Automate loading
+// function load10Sec(elem) {
+//   setTimeout(function() {
+//     var instance = elem._loadableInstance;
+//     instance.startLoading();
+//     setTimeout(function() { 
+//       instance.stopLoading();
+//       load10Sec(elem);
+//     }, 1000000);
+//   }, 2000);
+// }
+
+// const elems = document.querySelectorAll('.loadable');
+// for (var i = 0; i < elems.length; i++) {
+//   var elem = elems[i];
+//   if (elem) {
+//     load10Sec(elem);
+//   }
+// }
