@@ -1,7 +1,9 @@
-@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Overpass+Mono');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 html {
   font-family: $font-family-primary;
+  font-size: $font-size;
 }
 
 h1,

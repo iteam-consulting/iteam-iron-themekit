@@ -1,0 +1,33 @@
+.__iron-dialog {
+  background-color: $bg-light;
+
+  .night & {
+    background-color: $bg-dark;
+
+    footer {
+      background-color: lighten($bg-dark, 5%);
+      color: contrast-text-color(lighten($bg-dark, 5%));
+    }
+  }
+
+  header {
+    $deg: 90deg;
+    $color1: $brand-color 0%;
+    $color2: $secondary-color 90%;
+    background: linear-gradient($deg, $color1, $color2);
+    color: contrast-text-color($brand-color);
+  }
+
+  footer {
+    background-color: darken($bg-light, 5%);
+    color: contrast-text-color(darken($bg-light, 5%));
+  }
+}
+
+.__iron-dialog-wrapper {
+  background-color: rgba(darken($bg-light, 5%), 0.9);
+
+  .night & {
+    background-color: rgba(lighten($bg-dark, 5%), 0.9);
+  }
+}

@@ -1,0 +1,32 @@
+.__iron-dialog {
+  $padding: 16px;
+  max-height: 95vh;
+  width: 90vw;
+  padding: $padding;
+
+  @media (min-width: $screen-md-min) {
+    max-height: 80vh;
+    width: 60vw;
+  }
+
+  header {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: (-$padding) (-$padding) $padding (-$padding);
+    padding: $padding;
+    width: calc(100% + #{$padding * 2});
+
+    .button,
+    button {
+      z-index: 0;
+    }
+  }
+
+  footer {
+    margin: $padding (-$padding) (-$padding) (-$padding);
+    padding: $padding;
+    width: calc(100% + #{$padding * 2});
+  }
+}

@@ -1,0 +1,24 @@
+footer {
+  @include standard-transition(transform);
+  padding: 16px 0;
+  width: 100%;
+
+  .show-menu > & {
+    transform: translateX($nav-width);
+  }
+
+  @media (min-width: $screen-md-min) {
+    .layout.sidebar > & {
+      bottom: 0;
+      left: 0;
+      padding: 8px 16px;
+      position: fixed;
+      width: $nav-width;
+      z-index: 9500;
+
+      .container {
+        padding: 0;
+      }
+    }
+  }
+}

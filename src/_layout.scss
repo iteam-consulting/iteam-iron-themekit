@@ -1,148 +1,64 @@
-@import 'variables';
-@import 'mixins/animation';
-
 .layout {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   overflow-x: hidden;
+  padding-top: $header-height;
 
   @media (min-width: $screen-md-min) {
-    padding-top: 0;
-  }
+    align-items: stretch;
+    flex-flow: row wrap;
 
-  &.fixed-header {
-    padding-top: $header-height;
+    &.fixed-header {
+      padding-top: $header-height * 2;
 
-    > header {
-      position: fixed;
-      top: 0;
-    }
-  }
-}
-
-header {
-  align-items: center;
-  display: flex;
-
-  .layout > &.hero {
-    height: calc(100vh - #{$nav-height});
-  }
-  
-  .layout > & {
-    height: $header-height;
-    width: 100%;
-  }
-
-  button#menutoggle {
-    display: initial;
-    margin: 16px;
-  }
-
-  @media (min-width: $screen-md-min) {
-    button#menutoggle {
-      display: none;
+      &.split-header,
+      &.sidebar {
+        padding-top: $header-height;
+      }
     }
 
-    .layout.split-header > & {
-      width: initial;
+    &:not(.fixed-header):not(.sidebar) {
+      padding-top: 0;
     }
-  }
-}
-
-nav {
-  .layout > & {
-    @include standard-transition(transform);
-    max-height: calc(100vh - #{$header-height});
-    overflow-y: auto;
-    position: fixed;
-    top: $header-height;
-    transform: translateX(-$nav-width);
-    width: $nav-width;
-    height: $nav-height;
-
-    @media (min-width: $screen-md-min) {
-      display: flex;
-      position: static;
-      transform: translateX(0);
-      width: 100%;
-    }
-  }
-
-  .layout.split-header > & {
-    @media (min-width: $screen-md-min) {
-      align-items: center;
-      flex: 1;
-      width: initial;
-    }
-  }
-
-  .layout.sidebar > & {
-    @media (min-width: $screen-md-min) {
-      width: $nav-width;
-    }
-  }
-
-  .layout.show-menu > & {
-    transform: translateX(0);
-  }
-}
-
-main {
-  @include standard-transition(transform);
-  flex: 1;
-
-  .layout.show-menu & {
-    transform: translateX($nav-width);
-  }
-
-  .layout.split-header & {
-    @media (min-width: $screen-md-min) {
-      width: 100%;
-      flex: initial;
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    position: static;
-  }
-}
-
-footer {
-  @include standard-transition(transform);
-  width: 100%;
-
-  .show-menu > & {
-    transform: translateX($nav-width);
-  }
-
-  @media (min-width: $screen-md-min) {
-    position: static;
   }
 }
 
 .container {
-  margin: 0 auto;
-  padding: 16px;
+  margin: 0;
+  padding: 0 16px;
   width: 100%;
 
-  @media (min-width: $screen-sm-min) {
-    width: $screen-sm-min;
-  }
+  .layout:not(.sidebar) & {
+    @media (min-width: $screen-md-min) {
+      margin: 0 auto;
+      width: $screen-md-min;
+    }
 
-  @media (min-width: $screen-md-min) {
-    width: $screen-md-min;
+    @media (min-width: $screen-lg-min) {
+      width: $screen-lg-min;
+    }
   }
+}
 
-  @media (min-width: $screen-lg-min) {
-    width: $screen-lg-min;
-  }
+.responsive-container {
+  margin: 0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flex {
   display: flex;
-  align-items: center;
-
-  &.column {
-    flex-direction: column;
-  }
+  flex: 1 1 0;
 }

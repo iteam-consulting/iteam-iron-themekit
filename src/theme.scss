@@ -1,15 +1,46 @@
+// Variable Definitions
 @import 'variables';
+
+// Mixins and functions
+@import 'mixins/animation';
+@import 'functions/bright';
+@import 'functions/contrast';
+
+// Rules (in order)
 @import 'typography';
 @import 'layout';
-@import 'color';
+@import 'components/index';
+@import 'color/index';
 
+// Global Styles
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  position: relative;
 }
 
 body {
+  @include standard-transition(background);
   font-size: $font-size;
   margin: 0;
+}
+
+// Continuous sections
+section + section {
+  $top-margin: 128px;
+  position: relative;
+  margin-top: $top-margin;
+
+  &:before {
+    $height: 2px;
+    background-color: $brand-color;
+    border-radius: $height / 2;
+    content: '';
+    height: $height;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -(($top-margin / 2) + $height);
+  }
 }

@@ -1,9 +1,16 @@
+$bg-light: #f9f9f9 !default;
+$bg-dark: #212121 !default;
 
-$brand-color: #ff7043;
+$brand-color: #ff7043 !default;
+$brand-lighter: mix($brand-color, $bg-light, 80%);
+$brand-darker: mix($brand-color, $bg-dark, 80%);
+
+$secondary-color: adjust-hue($brand-color, 15);
 
 $font-size: 18px !default;
 $font-family-primary: 'Open Sans', sans-serif !default;
 $font-family-headings: 'Montserrat', sans-serif !default;
+$font-family-numbers: 'Overpass Mono', 'Consolas', monospace;
 
 $nav-width: 250px !default;
 $nav-height: 3rem !default;

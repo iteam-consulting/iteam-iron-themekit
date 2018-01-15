@@ -1,0 +1,15 @@
+@function brightness($color) {
+  @if type-of($color) == color {
+    @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) / 255 * 100%;
+  }
+  @else {
+    @return unquote("brightness(#{$color})");
+  }
+}
+
+@function contrast-text-color($color) {
+  $color-brightness: brightness($color);
+  $light-text-brightness: brightness($bg-light);
+  $dark-text-brightness: brightness($bg-dark);
+  @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $bg-light, $bg-dark);
+}

@@ -1,0 +1,31 @@
+.nav-item,
+.nav-item:visited {
+  .layout & {
+    $color: contrast-text-color($brand-lighter);
+    color: $color;
+
+    &:hover {
+      background-color: rgba($color, 0.12);
+    }
+  }
+
+  .layout.night & {
+    $color: contrast-text-color($brand-darker);
+    color: $color;
+
+    &:hover {
+      background-color: rgba($color, 0.12);
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .layout.split-header & {
+      $color: contrast-text-color($brand-color);
+      color: $color;
+
+      &:hover {
+        background-color: rgba($color, 0.12);
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@media (max-width: 768px) {
+  #fixedHeaderToggleContainer {
+    display: none;
+  }
+
+  #splitHeaderToggleContainer {
+    display: none;
+  }
+}
+
+.layout.sidebar #fixedHeaderToggleContainer {
+  display: none;
+}
+
+.layout:not(.split-header) #splitHeaderToggleContainer {
+  display: none;
+}
+
+details.show-code {
+  transition: all ease-in-out .3s;
+  background-color: #ddd;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  color: #222;
+}
+
+.night details.show-code {
+  background-color: #333;
+  border-color: #111;
+  color: #ddd;
+}
+
+summary {
+  cursor: pointer;
+}
+
+code {
+  font-size: 14px;
+}

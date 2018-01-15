@@ -1,0 +1,49 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0;
+  margin: 16px 0;
+  min-width: 100%;
+
+  &.bordered tbody {
+    td  {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+
+    tr:last-child td {
+      border: none;
+    }
+  }
+
+  &.celled th,
+  &.celled td {
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  &.selectable tbody tr:hover td {
+    cursor: pointer;
+  }
+
+  th, td {
+    @include standard-transition(background);
+    font-size: 14px;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+}
+
+th.number {
+  text-align: right;
+  vertical-align: middle;
+}
+
+td.number {
+  text-align: right;
+  vertical-align: middle;
+  font-family: $font-family-numbers;
+  font-size: 12px;
+}

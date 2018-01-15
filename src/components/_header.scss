@@ -1,0 +1,39 @@
+header {
+  align-items: center;
+  display: flex;
+  
+  .layout > & {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+
+    &.hero {
+      height: calc(100vh - #{$nav-height});
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    #menutoggle {
+      display: none;
+    }
+
+    .layout.split-header > & {
+      width: 25%;
+      
+      .container {
+        margin: 0;
+        width: initial;
+      }
+    }
+
+    .layout:not(.fixed-header):not(.sidebar) > & {
+      position: static;
+    }
+  }
+
+  main & h1 {
+    margin-bottom: 0;
+  }
+}
