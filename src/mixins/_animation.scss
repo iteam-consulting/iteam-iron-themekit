@@ -1,4 +1,4 @@
 
 @mixin standard-transition($element) {
-  transition: $element ease-in 0.2s;
+  transition: $element ease-in-out 0.2s;
 }
