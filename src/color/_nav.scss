@@ -12,7 +12,7 @@ nav {
   @media (min-width: $screen-md-min) {
     .layout.split-header > & {
       $deg: 90deg;
-      $color1: adjust-hue($brand-color, 15) 0%;
+      $color1: $secondary-color 0%;
       $color2: $brand-color 90%;
       background: linear-gradient($deg, $color1, $color2);
       color: contrast-text-color($brand-color);
