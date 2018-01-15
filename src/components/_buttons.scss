@@ -21,6 +21,7 @@ button,
 
     &:after {
       @include standard-transition(opacity);
+      border-radius: 3px;
       bottom: 0;
       content: '';
       left: 0;
