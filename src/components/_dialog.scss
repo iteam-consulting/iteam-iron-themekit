@@ -17,6 +17,11 @@
     margin: (-$padding) (-$padding) $padding (-$padding);
     padding: $padding;
     width: calc(100% + #{$padding * 2});
+
+    .button,
+    button {
+      z-index: 0;
+    }
   }
 
   footer {
