@@ -18,6 +18,11 @@ class Dialog {
     this._wrapper.style.right = 0;
     this._wrapper.style.top = 0;
     this._wrapper.style.zIndex = 11000;
+    this._wrapper.addEventListener('click', function(e) {
+      if (e.target === this._wrapper) {
+        this.close();
+      }
+    }.bind(this));
 
     var dialog = document.createElement('div');
     dialog.classList.add('__iron-dialog');
