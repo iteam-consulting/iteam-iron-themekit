@@ -5,9 +5,10 @@ button,
   &:visited {
     background-color: transparent;
     border-color: $bg-dark;
+    box-shadow: none;
     color: inherit;
 
-    &:after {
+    &:hover {
       box-shadow: 0 6px 10px rgba(0,0,0,0.14), 0 1px 18px rgba(0,0,0,0.12), 0 3px 5px rgba(0,0,0,0.2);
     }
 
