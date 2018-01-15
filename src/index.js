@@ -1,11 +1,13 @@
 import './theme.scss';
 import setupCards from './components/cards';
 import {setupLoadables} from './components/loadable';
+import {setupDialogs} from './components/dialog';
 
 var layout = document.querySelector('.layout');
 
 setupCards();
 setupLoadables();
+setupDialogs();
 
 // Steps to take when the window loads
 window.onload = function() {

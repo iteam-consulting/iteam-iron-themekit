@@ -385,6 +385,36 @@
         </div>
         <details class="show-code"></details>
       </section>
+      <section>
+        <h2>Dialogs</h2>
+        <div class="code-wrapper">
+          <button onclick="toggleDialog()">Open Dialog</button>
+          <div class="dialog" id="dialog">
+            <header>
+              <span>Dialog Header</span>
+              <button class="material-icons dense" onclick="toggleDialog()">close</button>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget feugiat mi. Duis ullamcorper eros commodo semper vestibulum. Pellentesque pellentesque blandit est, id luctus lectus viverra ut. Phasellus sed pretium dui, ac dignissim ex. Nulla facilisi. Vivamus elit arcu, venenatis vel tellus in, sollicitudin posuere justo. Morbi euismod placerat lacus. Praesent sit amet lacus et velit fringilla molestie. Aliquam facilisis ex quis odio posuere hendrerit. Nam at nibh sit amet eros pulvinar fermentum vitae vel dolor. Nulla non finibus orci. Ut sit amet nisi nibh. Vivamus ultrices scelerisque ligula non imperdiet. Duis congue elit et euismod eleifend. Aliquam erat volutpat. Nullam semper dapibus nulla eget tincidunt.</p>
+            <p>Aenean ullamcorper pharetra venenatis. Etiam nec lacus egestas arcu ornare euismod. Mauris interdum justo sed tincidunt congue. In hac habitasse platea dictumst. Etiam imperdiet lacus eu nulla venenatis pretium. Aenean consequat felis in mi sodales, sit amet fringilla mi laoreet. Etiam commodo tortor at lectus porttitor congue. Maecenas bibendum vitae leo a hendrerit.</p>
+            <footer>
+              Footer content.
+            </footer>
+          </div>
+          <script>
+  function toggleDialog() {
+    var dialog = document.getElementById('dialog');
+    var instance = dialog._dialogInstance;
+    
+    if (!instance._wrapper) {
+      instance.open();
+    } else {
+      instance.close();
+    }
+  }
+          </script>
+        </div>
+        <details class="show-code"></details>
+      </section>
     </div>
   </main>
   <footer>
