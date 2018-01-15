@@ -11,10 +11,7 @@
   }
 
   header {
-    $deg: 90deg;
-    $color1: $brand-color 0%;
-    $color2: $secondary-color 90%;
-    background: linear-gradient($deg, $color1, $color2);
+    background-color: $brand-color;
     color: contrast-text-color($brand-color);
   }
 

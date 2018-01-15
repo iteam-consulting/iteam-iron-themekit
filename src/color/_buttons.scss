@@ -7,33 +7,10 @@ button,
     border-color: $bg-dark;
     color: inherit;
 
-    // Animated Background Psuedo-Element
-    &:after {
-      background-color: $bg-dark;
-
-      .night & {
-        background-color: $bg-light;
-      }
-    }
-
     // Primary Buttons
     &.primary {
-      background-color: transparent;
+      background-color: $brand-color;
       color: contrast-text-color($brand-color);
-
-      // Background Psuedo-Element
-      &:before {
-        background-color: $brand-color;
-      }
-
-      // Animated Background Psuedo-Element
-      &:after {
-        $deg: 90deg;
-        $color1: transparent 10%;
-        $color2: $secondary-color 50%;
-        $color3: transparent 90%;
-        background: linear-gradient($deg, $color1, $color2, $color3);
-      }
     }
 
     .night & {
